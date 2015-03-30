@@ -1099,7 +1099,7 @@ void test_user_defined_functions(
 	assert(count == 1);
 
 	// Execute udf within a query
-	iter = coll->QueryUserDefinedFunctions(wstring(L"SELECT * FROM " + coll_name + L" WHERE " + udf_name + L"() = '0'"));
+	iter = coll->QueryUserDefinedFunctions(wstring(L"SELECT * FROM " + coll_name + L" WHERE udf." + udf_name + L"() = '0'"));
 	count = 0;
 	while (iter->HasMore())
 	{
